@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -37,7 +38,6 @@ nav {
   height: 10vh;
   min-height: 50px;
   width: 100vw;
-  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-around;

@@ -16,7 +16,7 @@ export default function Feed () {
     }, [])
 
     return (
-         isLoading ? <p>Loading...</p> : (
+         isLoading ? <p>Loading your feed...</p> : (
         <section className="section-feed">
             <h3>Your feed</h3>
             <ul>

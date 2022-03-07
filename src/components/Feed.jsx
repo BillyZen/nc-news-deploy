@@ -17,7 +17,7 @@ export default function Feed () {
 
     return (
          isLoading ? <p>Loading your feed...</p> : (
-        <section className="section-feed">
+        <main className="section-feed">
             <h3>Your feed</h3>
             <ul>
             {articles.map(article => {
@@ -33,6 +33,6 @@ export default function Feed () {
                 )
             })}
             </ul>
-        </section>
+        </main>
     ))
 }

@@ -89,7 +89,7 @@ nav span img {
 
 /* Feed */
 
-section.section-feed {
+main.section-feed {
   display: flex;
   flex-direction: column;
   background: linear-gradient(45deg, rgb(190, 104, 104), rgb(193, 178, 219), rgb(138, 138, 221));
@@ -100,7 +100,7 @@ section.section-feed {
   padding: 0;
 }
 
-section.section-feed h3 {
+main.section-feed h3 {
   width: 98vw;
   background: rgba(95, 112, 138, 0.342);
   margin: 1vw;
@@ -111,7 +111,7 @@ section.section-feed h3 {
   border-radius: 20px;
 }
 
-section.section-feed ul {
+main.section-feed ul {
   display: grid;
   grid-template-columns: auto;
   list-style: none;
@@ -120,7 +120,7 @@ section.section-feed ul {
   padding: 0;
 }
 
-section.section-feed ul li {
+main.section-feed ul li {
   box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);
   border-radius: 10px;
   margin: 1rem;
@@ -134,14 +134,14 @@ section.section-feed ul li {
   justify-content: center;
 }
 
-section.section-feed ul li:hover {
+main.section-feed ul li:hover {
   box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.2);
   transform: scale(1.05);
   transition: all 0.4s ease;
 }
 
 
-section.section-feed ul li .article-txt h4 {
+main.section-feed ul li .article-txt h4 {
   color:rgb(230, 146, 146);
   font-size: 1.5rem;
   text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.9);
@@ -154,7 +154,7 @@ and (orientation : landscape) {
     grid-template-columns: auto auto auto auto;
   }
 
-  section.section-feed ul {
+  main.section-feed ul {
     grid-template-columns: auto auto auto;
   }
 }

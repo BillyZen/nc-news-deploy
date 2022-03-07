@@ -1,3 +1,160 @@
 .App {
   text-align: center;
 }
+
+/* Header */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap');
+
+header {
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  background: linear-gradient(45deg, rgb(190, 104, 104), rgb(193, 178, 219), rgb(138, 138, 221));
+  box-shadow: inset 0px 0px 6px 3px rgba(53, 47, 47, 0.3);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: rgb(197, 47, 47);
+  margin: 1rem;
+}
+
+header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: rgb(43, 43, 189);
+}
+
+
+/* Nav */
+
+nav {
+  height: 10vh;
+  min-height: 50px;
+  width: 100vw;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.3);
+  background:rgb(193, 178, 219);
+}
+
+/* I would like to learn how to make a sticky nav in react (can't use typical DOM manipulation methods) */
+
+nav .nav-links-container {
+  width: 70vw;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+nav .nav-links-container .nav-link {
+  text-decoration: none;
+  color: rgb(197, 47, 47);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+nav .nav-link:hover {
+  transform: translateY(-5px);
+  transition: all 0.2s linear;
+  cursor: pointer;
+  color: rgb(43, 43, 189);
+}
+
+nav span {
+  width: 50vw;
+  color: green;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+nav span img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px green solid;
+  margin-left: 1rem;
+}
+
+
+/* Feed */
+
+section.section-feed {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(45deg, rgb(190, 104, 104), rgb(193, 178, 219), rgb(138, 138, 221));
+  box-shadow: inset 0px 0px 6px 3px rgba(53, 47, 47, 0.3);
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  padding: 0;
+}
+
+section.section-feed h3 {
+  width: 98vw;
+  background: rgba(95, 112, 138, 0.342);
+  margin: 1vw;
+  padding: 1vw 0;
+  color: rgb(43, 43, 189);
+  font-size: 3rem;
+  text-transform: uppercase;
+  border-radius: 20px;
+}
+
+section.section-feed ul {
+  display: grid;
+  grid-template-columns: auto;
+  list-style: none;
+  width: 90vw;
+  margin: 0 5vw;
+  padding: 0;
+}
+
+section.section-feed ul li {
+  box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 0.5rem;
+  background: rgba(44, 44, 114, 0.541);
+  color: rgb(218, 181, 181);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section.section-feed ul li:hover {
+  box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+
+section.section-feed ul li .article-txt h4 {
+  color:rgb(230, 146, 146);
+  font-size: 1.5rem;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.9);
+}
+
+
+@media only screen 
+and (orientation : landscape) {
+    nav .nav-links-container {
+    grid-template-columns: auto auto auto auto;
+  }
+
+  section.section-feed ul {
+    grid-template-columns: auto auto auto;
+  }
+}

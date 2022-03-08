@@ -28,7 +28,7 @@ export default function Feed () {
     return (
          isLoading ? <p>Loading your feed...</p> : (
         <main className="section-feed">
-            <h3>Your feed</h3>
+            <h3>Your {topic} feed</h3>
             <ul>
             {articles.map(article => {
                 return (

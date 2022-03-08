@@ -35,7 +35,7 @@ export default function Feed () {
             {articles.map(article => {
                 return (
                     <li key={article.title}>
-                        <Link to={`/articles/${article.article_id}`}>
+                        <Link className="article-link" to={`/articles/${article.article_id}`}>
                             <div className="article-txt">
                                 <h4>{article.title}</h4>
                                 <p>Author - {article.author}</p>

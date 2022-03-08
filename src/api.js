@@ -10,3 +10,14 @@ export function getArticles() {
     return articles;
   });
 }
+
+// Feed - get all topic articles
+export function getTopicArticles(topic) {
+  return newsApi.get("/articles", {
+     params: {
+      topic: topic
+    } 
+  }).then(({ data: { articles } }) => {
+    return articles;
+  });
+}

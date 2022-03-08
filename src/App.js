@@ -16,6 +16,8 @@ function App() {
       'https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953'
   });
 
+
+
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
@@ -24,6 +26,7 @@ function App() {
           <Nav />
           <Routes>
             <Route path="/" element={<Feed />} />
+            <Route path="/:topic" element={<Feed />} />
           </Routes>
       </div>
       </UserContext.Provider>

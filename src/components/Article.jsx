@@ -21,15 +21,15 @@ export default function Article () {
         <main className="article-container">
             <div className="article-header">
                 <h3>{article.title}</h3>
-                <h4>{article.author}</h4>
-                <h4>{article.topic}</h4>
+                <h4>Author: {article.author}</h4>
+                <h4>Topic: {article.topic}</h4>
+            </div>
+            <div className="article-footer">
+                <h5>Votes: {article.votes}</h5>
+                <h5>Posted: {article.created_at}</h5>
             </div>
             <div className="article-body">
                 <p>{article.body}</p>
-            </div>
-            <div className="article-footer">
-                <h5>{article.votes}</h5>
-                <h5>{article.created_at}</h5>
             </div>
         </main>
     ))

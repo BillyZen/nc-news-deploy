@@ -28,3 +28,8 @@ export function getArticle(id) {
     return article;
   });
 }
+
+// Article - update Votes
+export function updateArticleVotes(id) {
+  return newsApi.patch(`/articles/${id}`, {inc_votes : 1})
+}

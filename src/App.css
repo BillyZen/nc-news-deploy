@@ -190,6 +190,14 @@ main.article-container .article-body {
 }
 
 
+button.hide {
+  display: none;
+}
+
+button.show {
+  display: block;
+}
+
 @media only screen 
 and (orientation : landscape) {
     nav .nav-links-container {

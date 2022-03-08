@@ -1,18 +1,36 @@
+import {useParams} from "react-router-dom"
+import {useState, useEffect} from "react"
+import * as api from "../api"
+
+
 export default function Article () {
-    return (
+    const {article_id} = useParams()
+
+    const [article, setArticle] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+            api.getArticle(article_id)
+            .then(articleData =>{
+            setArticle(articleData)
+            setIsLoading(false)    
+        }, [])
+    })
+
+    return ( isLoading ? <p>Loading your article...</p> : (
         <main className="article-container">
             <div className="article-header">
-                <h3>Article Title</h3>
-                <h4>Article Author</h4>
-                <h4>Article Topic</h4>
+                <h3>{article.title}</h3>
+                <h4>{article.author}</h4>
+                <h4>{article.topic}</h4>
             </div>
             <div className="article-body">
-                <p>Article Body</p>
+                <p>{article.body}</p>
             </div>
             <div className="article-footer">
-                <h5>Article Votes</h5>
-                <h5>Created At...</h5>
+                <h5>{article.votes}</h5>
+                <h5>{article.created_at}</h5>
             </div>
         </main>
-    )
+    ))
 }

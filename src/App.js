@@ -5,6 +5,7 @@ import { UserContext } from "./contexts/UserContext";
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
+import Article from "./components/Article";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Feed />} />
             <Route path="/:topic" element={<Feed />} />
+            <Route path="/articles/:article_id" element={<Article />} />
           </Routes>
       </div>
       </UserContext.Provider>

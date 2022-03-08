@@ -21,3 +21,10 @@ export function getTopicArticles(topic) {
     return articles;
   });
 }
+
+// Article - get article by id
+export function getArticle(id) {
+  return newsApi.get(`/articles/${id}`).then(({ data: { article } }) => {
+    return article;
+  });
+}

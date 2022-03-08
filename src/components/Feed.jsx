@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react"
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import * as api from "../api"
 
 export default function Feed () {
@@ -11,6 +11,8 @@ export default function Feed () {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
+
+        setIsLoading(true)
         if(topic) {
             api.getTopicArticles(topic)
             .then(articlesData =>{
@@ -33,12 +35,14 @@ export default function Feed () {
             {articles.map(article => {
                 return (
                     <li key={article.title}>
-                        <div className="article-txt">
-                            <h4>{article.title}</h4>
-                            <p>Author - {article.author}</p>
-                            <p>Topic - {article.topic}</p>
-                            <p>Votes - {article.votes}</p>
-                        </div>
+                        <Link to={`/articles/${article.article_id}`}>
+                            <div className="article-txt">
+                                <h4>{article.title}</h4>
+                                <p>Author - {article.author}</p>
+                                <p>Topic - {article.topic}</p>
+                                <p>Votes - {article.votes}</p>
+                            </div>
+                        </Link>
                     </li>
                 )
             })}

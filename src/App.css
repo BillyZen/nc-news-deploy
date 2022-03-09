@@ -169,6 +169,11 @@ main.article-container {
   flex-direction: column;
 }
 
+main.article-container .article-header h3{
+  font-size: 2.5rem;
+  width: 50vw;
+}
+
 main.article-container .article-header, main.article-container .article-footer {
   display: flex;
   flex-direction: column;
@@ -208,19 +213,23 @@ button.show {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  padding: 1rem;
-  width: 98vw;
+  padding: 5rem;
 }
 
 .article-comments-container ul.article-comments {
   background:rgb(34, 21, 21);
   padding: 1rem;
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .article-comments-container ul.article-comments li .comment-txt {
   background:rgb(131, 74, 74);
   padding: 0.5rem;
+  width: fit-content;
   margin-bottom: 1rem;
   border-radius: 10px;
   position: relative;
@@ -236,6 +245,40 @@ button.show {
   top: 0;
   background: rgb(104, 67, 67);
   z-index: -1;
+}
+
+.article-comments-container div .comment-post-container {
+  height: fit-content;
+  width: 96vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.article-comments-container div .comment-post-container input {
+  min-height: 5vh;
+  width: 92vw;
+  display: flex;
+  text-align: left;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1rem;
+}
+
+.article-comments-container div .comment-post-container button {
+  background:rgb(104, 67, 67);
+  color:rgb(236, 187, 187);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.article-comments-container div .comment-post-container button:hover {
+  transform: translateY(-5px);
+  transition: all 0.2s linear;
 }
 
 
@@ -257,7 +300,18 @@ and (orientation : landscape) {
     flex-direction: row;
   }
 
-  .article-comments-container {
+  .article-comments-container div {
     width: 60vw;
   }
+
+  .article-comments-container div .comment-post-container {
+    width: 60vw;
+  }
+
+  .article-comments-container div .comment-post-container input {
+    min-height: 5vh;
+    width: 60vw;
+  }
+
+
 }

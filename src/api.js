@@ -33,3 +33,10 @@ export function getArticle(id) {
 export function updateArticleVotes(id) {
   return newsApi.patch(`/articles/${id}`, {inc_votes : 1})
 }
+
+// Comments - show comments
+export function getComments(id) {
+  return newsApi.get(`/articles/${id}/comments`).then(({ data: { comments } }) => {
+    return comments;
+  });
+}

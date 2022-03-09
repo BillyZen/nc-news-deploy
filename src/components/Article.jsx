@@ -1,6 +1,7 @@
 import {useParams} from "react-router-dom"
 import {useState, useEffect} from "react"
 import * as api from "../api"
+import Comments from "./Comments"
 
 
 export default function Article () {
@@ -16,7 +17,7 @@ export default function Article () {
             setArticle(articleData)
             setIsLoading(false)    
         })
-    }, [])
+    }, [article_id])
 
 
     const voteGiven = votes === 1
@@ -42,6 +43,9 @@ export default function Article () {
             </div>
             <div className="article-body">
                 <p>{article.body}</p>
+            </div>
+            <div className="article-comments-container">
+                <Comments id={article_id}/>
             </div>
         </main>
     ))

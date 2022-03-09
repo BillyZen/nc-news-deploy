@@ -276,6 +276,14 @@ button.show {
   cursor: pointer;
 }
 
+.article-comments-container div .comment-post-container button.hide {
+  display: none;
+}
+
+.article-comments-container div .comment-post-container button.show {
+  display: block;
+}
+
 .article-comments-container div .comment-post-container button:hover {
   transform: translateY(-5px);
   transition: all 0.2s linear;

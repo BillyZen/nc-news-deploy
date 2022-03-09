@@ -8,7 +8,7 @@ export default function Comments ({id}) {
     const [isLoading, setIsLoading] = useState(false)
     const {loggedInUser} = useContext(UserContext)
     const {username} = loggedInUser
-    const [commentToAdd, setCommentToAdd] = useState()
+    const [commentToAdd, setCommentToAdd] = useState("")
     const [postedComment, setPostedComment] = useState(false)
     const [posting, setPosting] = useState(false)
     
@@ -26,24 +26,26 @@ export default function Comments ({id}) {
         <div>
             <div className="comment-post-container">
                 <input
-                value={commentToAdd}
-                onChange={
-                    (e) => {
-                        setCommentToAdd(e.target.value)
-                    }
+            value={commentToAdd}
+            onChange={
+                (e) => {
+                    setCommentToAdd(e.target.value)
                 }
-                ></input>
-                <button
-                onClick={
-                    async () => {
-                        setPosting(true)
-                        await api.addComment(id, username, commentToAdd)
-                        setPostedComment(true)
-                        setCommentToAdd("")
-                        setPosting(false)
-                    }
+            }
+            placeholder="Enter your comment here..."
+            ></input>
+            <button
+            onClick={
+                async () => {
+                    setPosting(true)
+                    await api.addComment(id, username, commentToAdd)
+                    setPostedComment(true)
+                    setCommentToAdd("")
+                    setPosting(false)
                 }
-                >{posting ? "Posting Comment" : "Add Comment"}</button>
+            }
+            className={commentToAdd !== "" ? "show" : "hide"}
+            >{posting ? "Posting Comment" : "Add Comment"}</button>
             </div>
             
             <ul className="article-comments">

@@ -7,19 +7,21 @@ export default function AddComment ({comments, setComments, id}) {
     const {loggedInUser} = useContext(UserContext)
     const {username} = loggedInUser
     const [posting, setPosting] = useState(false)
-    const [commentToAdd, setCommentToAdd] = useState()
+    const [commentToAdd, setCommentToAdd] = useState("")
 
     return (
         <form className="comment-post-container"
                 onSubmit={
                 (e) => {
                     e.preventDefault()
-                    setPosting(true)
+                    if(commentToAdd !== "") {setPosting(true)
                     api.addComment(id, username, commentToAdd).then((postedComment)=> {
                         setComments([postedComment, ...comments])
                         setPosting(false)
                         setCommentToAdd("")
+                        
                     })
+                }
                 }
             }
             >

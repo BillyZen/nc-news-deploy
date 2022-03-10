@@ -17,7 +17,7 @@ export default function Comments ({id}) {
             api.getComments(id)
             .then(commentData =>{
             setComments(commentData)
-            setIsLoading(false)    
+            setIsLoading(false)
             setPostedComment(false)
         })
     }, [postedComment, id])

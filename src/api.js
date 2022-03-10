@@ -48,6 +48,7 @@ export function getComments(id) {
   });
 }
 
+// Comments - add a comment
 export function addComment(id, userName, commentBody) {
   return newsApi.post(`/articles/${id}/comments`, { 
                     username : userName,
@@ -55,4 +56,12 @@ export function addComment(id, userName, commentBody) {
     }).then(({data: {comment}}) => {
     return comment;
   });
+}
+
+// Comments - delete a comment
+export function deleteComment(commentId){
+    return newsApi.delete(`/comments/${commentId}`)
+    .then(()=>{
+        return "Deleted Comment"
+    })
 }

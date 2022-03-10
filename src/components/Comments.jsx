@@ -1,12 +1,14 @@
 import * as api from "../api"
-import {useState, useEffect} from "react"
+import {useState, useEffect, useContext} from "react"
+import {UserContext} from "../contexts/UserContext"
 import AddComment from "./AddComment"
+import DeleteComment from "./DeleteComment"
 
 export default function Comments ({id}) {
 
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    
+    const {loggedInUser} = useContext(UserContext)
 
     useEffect(() => {
             api.getComments(id)
@@ -27,6 +29,7 @@ export default function Comments ({id}) {
                             <p>{comment.body}</p>
                             <p>Votes: {comment.votes}</p>
                             <p>By: {comment.author}</p>
+                            {loggedInUser.username === comment.author ? <DeleteComment comments={comments} setComments={setComments} commentId={comment.comment_id} /> : ""}
                         </div>
                     </li>
                 )

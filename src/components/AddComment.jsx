@@ -14,14 +14,15 @@ export default function AddComment ({comments, setComments, id}) {
                 onSubmit={
                 (e) => {
                     e.preventDefault()
-                    if(commentToAdd !== "") {setPosting(true)
-                    api.addComment(id, username, commentToAdd).then((postedComment)=> {
-                        setComments([postedComment, ...comments])
-                        setPosting(false)
-                        setCommentToAdd("")
-                        
-                    })
-                }
+                    if(commentToAdd !== "") {
+                        setPosting(true)
+                         api.addComment(id, username, commentToAdd)
+                        .then((postedComment)=> {
+                            setComments([postedComment, ...comments])
+                            setPosting(false)
+                            setCommentToAdd("")
+                        })
+                    }
                 }
             }
             >

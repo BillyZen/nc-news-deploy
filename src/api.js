@@ -5,18 +5,25 @@ const newsApi = axios.create({
 });
 
 // Feed - get all articles
-export function getArticles() {
-  return newsApi.get("/articles").then(({ data: { articles } }) => {
+export function getArticles(sort, order) {
+  return newsApi.get("/articles", {
+        params: {
+        sort_by: sort,
+        order: order
+        }
+    }).then(({ data: { articles } }) => {
     return articles;
   });
 }
 
 // Feed - get all topic articles
-export function getTopicArticles(topic) {
+export function getTopicArticles(topic, sort, order) {
   return newsApi.get("/articles", {
      params: {
-      topic: topic
-    } 
+      topic: topic,
+      sort_by: sort,
+      order: order
+    }
   }).then(({ data: { articles } }) => {
     return articles;
   });

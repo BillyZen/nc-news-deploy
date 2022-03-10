@@ -32,8 +32,8 @@ export default function Feed () {
     }, [topic, sort, order])
 
     if(!topics.includes(topic)) {return (
-        <main>
-            <h1>TOPIC DOES NOT EXIST</h1>
+        <main className="error-page">
+            <h1>404: TOPIC DOES NOT EXIST</h1>
             <Link to="/">Back to safety</Link>
         </main>
     )} else return (

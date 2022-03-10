@@ -13,9 +13,9 @@ export default function Article () {
 
     useEffect(() => {
             api.getArticle(article_id)
-            .then(articleData =>{
+            .then((articleData) =>{
             setArticle(articleData)
-            setIsLoading(false)    
+            setIsLoading(false)
         })
     }, [article_id])
 
@@ -48,8 +48,8 @@ export default function Article () {
             </div>
         </main>
     ): 
-            <div>
+            <main className="error-page">
                 <h1>Article does not exist</h1>
                 <Link to="/">Back to safety</Link>
-            </div>
+            </main>
     )}

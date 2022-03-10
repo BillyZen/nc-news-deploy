@@ -291,8 +291,6 @@ button.show {
 
 /* Sort Feed */
 
-
-
 .sort-order-container button {
   cursor: pointer;
   padding: 0.5rem;
@@ -306,6 +304,14 @@ button.show {
 .sort-order-container button:hover {
   transform: translateY(-5px);
   transition: 0.2s all linear;
+}
+
+/* Delete Button */
+
+.delete-button {
+  cursor: pointer;
+  background: rgb(85, 20, 20);
+  color: rgb(231, 208, 208);
 }
 
 

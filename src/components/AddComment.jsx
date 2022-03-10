@@ -8,6 +8,7 @@ export default function AddComment ({comments, setComments, id}) {
     const {username} = loggedInUser
     const [posting, setPosting] = useState(false)
     const [commentToAdd, setCommentToAdd] = useState("")
+    const [error, setError] = useState(false)
 
     return (
         <form className="comment-post-container"
@@ -22,6 +23,8 @@ export default function AddComment ({comments, setComments, id}) {
                             setPosting(false)
                             setCommentToAdd("")
                         })
+                    } else {
+                        setError(true)
                     }
                 }
             }
@@ -30,10 +33,11 @@ export default function AddComment ({comments, setComments, id}) {
             value={commentToAdd}
             onChange={
                 (e) => {
+                    setError(false)
                     setCommentToAdd(e.target.value)
                 }
             }
-            placeholder="Enter your comment here..."
+            placeholder={error ? "Please write comment before posting!" : "Enter your comment here..."}
             ></input>
             <button
             type="submit"

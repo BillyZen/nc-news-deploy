@@ -33,7 +33,9 @@ export function getTopicArticles(topic, sort, order) {
 export function getArticle(id) {
   return newsApi.get(`/articles/${id}`).then(({ data: { article } }) => {
     return article;
-  });
+  }).catch(err => {
+      return err
+  })
 }
 
 // Article - update Votes

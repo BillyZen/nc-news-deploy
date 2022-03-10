@@ -7,6 +7,7 @@ export default function DeleteComment ({comments, setComments, commentId}) {
 
     return (
         <button
+        className="delete-button"
         onClick={()=> {
             setDeleting(true)
             api.deleteComment(commentId).then(res => {

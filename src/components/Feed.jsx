@@ -6,7 +6,8 @@ import SortFeed from "./SortFeed"
 export default function Feed () {
 
     const {topic} = useParams()
-
+    const topics = ["football", "cooking", "coding", undefined]
+    
     const [articles, setArticles] = useState([])
 
     const [isLoading, setIsLoading] = useState(true)
@@ -30,7 +31,12 @@ export default function Feed () {
         })}
     }, [topic, sort, order])
 
-    return (
+    if(!topics.includes(topic)) {return (
+        <main>
+            <h1>TOPIC DOES NOT EXIST</h1>
+            <Link to="/">Back to safety</Link>
+        </main>
+    )} else return (
          isLoading ? <p>Loading your feed...</p> : (
         <main className="section-feed">
             <h3>Your {topic} feed</h3>

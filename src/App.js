@@ -6,6 +6,7 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import Article from "./components/Article";
+import ErrorPage from "./components/ErrorPage"
 
 
 function App() {
@@ -27,8 +28,9 @@ function App() {
           <Nav />
           <Routes>
             <Route path="/" element={<Feed />} />
-            <Route path="/:topic" element={<Feed />} />
+            <Route path="/feed/:topic" element={<Feed />} />
             <Route path="/articles/:article_id" element={<Article />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
       </div>
       </UserContext.Provider>

@@ -11,9 +11,9 @@ export default function Nav () {
         <nav>
             <div className="nav-links-container">
                 <Link to="/" className="nav-link">All</Link>
-                <Link to="/coding" className="nav-link">Coding</Link>
-                <Link to="/football" className="nav-link">Football</Link>
-                <Link to="/cooking" className="nav-link">Cooking</Link>
+                <Link to="/feed/coding" className="nav-link">Coding</Link>
+                <Link to="/feed/football" className="nav-link">Football</Link>
+                <Link to="/feed/cooking" className="nav-link">Cooking</Link>
             </div>
             <span>
                 {loggedInUser.username}

@@ -45,5 +45,7 @@ export function addComment(id, userName, commentBody) {
   return newsApi.post(`/articles/${id}/comments`, { 
                     username : userName,
                     body : commentBody
-    })
+    }).then(({data: {comment}}) => {
+    return comment;
+  });
 }

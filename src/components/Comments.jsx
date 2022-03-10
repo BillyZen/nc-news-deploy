@@ -1,16 +1,11 @@
 import * as api from "../api"
-import {useState, useEffect, useContext} from "react"
-import {UserContext} from "../contexts/UserContext"
+import {useState, useEffect} from "react"
+import AddComment from "./AddComment"
 
 export default function Comments ({id}) {
 
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const {loggedInUser} = useContext(UserContext)
-    const {username} = loggedInUser
-    const [commentToAdd, setCommentToAdd] = useState("")
-    const [postedComment, setPostedComment] = useState(false)
-    const [posting, setPosting] = useState(false)
     
 
     useEffect(() => {
@@ -18,36 +13,12 @@ export default function Comments ({id}) {
             .then(commentData =>{
             setComments(commentData)
             setIsLoading(false)
-            setPostedComment(false)
         })
-    }, [postedComment, id])
+    }, [id])
 
     return ( isLoading ? <p>Loading comments...</p> : (
         <div>
-            <div className="comment-post-container">
-                <input
-            value={commentToAdd}
-            onChange={
-                (e) => {
-                    setCommentToAdd(e.target.value)
-                }
-            }
-            placeholder="Enter your comment here..."
-            ></input>
-            <button
-            onClick={
-                async () => {
-                    setPosting(true)
-                    await api.addComment(id, username, commentToAdd)
-                    setPostedComment(true)
-                    setCommentToAdd("")
-                    setPosting(false)
-                }
-            }
-            className={commentToAdd !== "" ? "show" : "hide"}
-            >{posting ? "Posting Comment" : "Add Comment"}</button>
-            </div>
-            
+            <AddComment comments={comments} setComments={setComments} id={id}/>
             <ul className="article-comments">
                 {comments.length === 0 ?  <p>Be the first to comment!</p> : comments.map(comment => {
                 return (

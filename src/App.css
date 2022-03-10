@@ -289,6 +289,25 @@ button.show {
   transition: all 0.2s linear;
 }
 
+/* Sort Feed */
+
+
+
+.sort-order-container button {
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0.5rem 0.25rem;
+  background:rgb(43, 43, 189);
+  color:rgb(230, 209, 209);
+  border-radius: 10px;
+  width: 100px;
+}
+
+.sort-order-container button:hover {
+  transform: translateY(-5px);
+  transition: 0.2s all linear;
+}
+
 
 @media only screen 
 and (orientation : landscape) {

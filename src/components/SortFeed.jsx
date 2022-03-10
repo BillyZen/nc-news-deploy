@@ -3,7 +3,7 @@
 export default function SortFeed ({setSort, setOrder}) {
 
     return (
-    <div>
+    <div className="sort-order-container">
         <h2>Sort By</h2>
         <button
         onClick={()=>{
@@ -19,7 +19,7 @@ export default function SortFeed ({setSort, setOrder}) {
         onClick={()=>{
             setSort("comment_count")
         }}
-        >Comment Count</button>
+        >Comments</button>
         <button
         onClick={()=>{
             setSort("votes")

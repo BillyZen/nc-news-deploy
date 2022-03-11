@@ -1,4 +1,4 @@
-Things your readme should include:
+Welcome to my REACT.js News article app! It was created across 4 days for the back end (Express.js with PostgreSQL) and 4 days for the front end (REACT.js).
 
 Link to the deployed app: https://quizzical-clarke-4e8b78.netlify.app/
 

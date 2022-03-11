@@ -9,3 +9,12 @@ Link to the backend repo: https://github.com/BillyZen/NC-News
 Node version ^v14.15.4 is required.
 
 Cloning Repo : In command line of where you would like the repo to sit in your file structure - $git clone https://github.com/BillyZen/nc-news-deploy.git
+
+
+Additional functionality that I will be working on:
+ sort comments by date created / votes
+ pagination across articles and comments (need to add to backend)
+ filter / display articles by specific user
+ post new article
+ delete logged in user’s articles
+
